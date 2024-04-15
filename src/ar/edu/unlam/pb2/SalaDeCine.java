@@ -84,6 +84,26 @@ public class SalaDeCine {
 		System.out.println("Cantidad de butacas ocupadas: " + contador);
 	}
 
+	public void hayEspacioPara(Integer cantidadDePersonas) {
+		boolean espacio = false;
+		for (int i = 0; i < cantidadFilas; i++) {
+			int contador = 0;
+			for (int j = 0; j < cantidadColumnas; j++) {
+				if (!butacas[i][j].isOcupada()) {
+					contador++;
+					if (contador == cantidadDePersonas) {
+						espacio = true;
+						System.out.println(espacio);
+					}
+				} else {
+					contador = 0;
+				}
+			}
+		}
+		espacio = false;
+		System.out.println(espacio);
+	}
+
 	public Integer getCantidadColumnas() {
 		return cantidadColumnas;
 	}
